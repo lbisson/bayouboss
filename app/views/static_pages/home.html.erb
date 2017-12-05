@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Home | Bayou Boss</title>
-  </head>
-  <body>
-    <h1>Bayou Boss Tournaments</h1>
-    <p>
-      This is the home page for the Bayou Boss.  Enter if you have a big enough hat!
-    </p>
-  </body>
-</html>
+
+<div class="center jumbotron">
+  <h1>Bayou Boss Tournaments</h1>
+  <h2>
+    This is the home page for the Bayou Boss.  Enter if you have a big enough hat!
+  </h2>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+<%= link_to image_tag("bayouhat.jpg", alt: "Biggest Hat"),
+            'http://rubyonrails.org/' %>
