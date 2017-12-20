@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Burst
+  event_start: 2018-12-18 16:03:42
+  num_rounds: 1
+  user: one
+
+two:
+  name: PMG
+  event_start: 2018-01-18 16:03:42
+  num_rounds: 1
+  user: two
+
+three:
+  name: MyString
+  event_start: 2018-03-18 16:03:42
+  num_rounds: 1
+  user: one
+
+four:
+  name: MyString
+  event_start: 2018-04-18 16:03:42
+  num_rounds: 1
+  user: one

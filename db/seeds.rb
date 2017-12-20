@@ -17,3 +17,9 @@ User.create!(name:  "Some'r Teeth Jones",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+3.times do
+  name = Faker::App.name
+  users.each { |user| user.tournaments.create!(name: name, num_rounds: 3) }
+end

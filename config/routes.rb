@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tournaments
   get 'password_resets/new'
 
   get 'password_resets/edit'

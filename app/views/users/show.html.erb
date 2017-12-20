@@ -8,4 +8,13 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.tournaments.any? %>
+      <h3>Tournaments (<%= @user.tournaments.count %>)</h3>
+      <ol class="tournaments">
+        <%= render @tournaments %>
+      </ol>
+      <%= will_paginate @tournaments %>
+    <% end %>
+  </div>
 </div>

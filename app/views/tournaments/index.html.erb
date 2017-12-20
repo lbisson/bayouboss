@@ -1,0 +1,11 @@
+<h1>Upcoming Malifaux Tournaments</h1>
+
+<%= will_paginate %>
+
+<ul class="tournaments">
+  <% @tournaments.each do |tournament| %>
+    <%= render @tournaments %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

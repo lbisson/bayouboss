@@ -1,0 +1,21 @@
+<li id="tournament-<%= tournament.id %>">
+<!--  <%= link_to gravatar_for(tournament.user, size: 50), tournament.user %>
+  <span class="user">Organizer: <%= link_to tournament.user.name, tournament.user %></span>
+  <span class="tname"><%= tournament.name %> | <%= tournament.num_rounds %></span>
+  <span class="start"><%= tournament.event_start %></span>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(tournament.created_at) %> ago.
+  </span>
+</li> -->
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title"><%= tournament.name %></h4>
+    <h6 class="card-subtitle mb-2 text-muted"><%= tournament.event_start %></h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Organizer: <%= tournament.user.name %></a>
+  </div>
+</div>
+
+</li>
