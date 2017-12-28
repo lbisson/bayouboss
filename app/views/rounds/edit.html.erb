@@ -1,0 +1,35 @@
+<h1>Edit Round for <%= link_to(@tournament.name, @tournament) %></h1>
+
+<%= form_for([@tournament, @round]) do |f| %>
+  <p>
+    <%= f.label :strategy %><br/>
+    <%= f.text_field :strategy, size: 40, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :deployment %><br/>
+    <%= f.text_field :deployment, size: 40 %>
+  </p>
+  <p>
+    <%= f.label :scheme1 %><br/>
+    <%= f.text_field :scheme1, size: 40%>
+  </p>
+  <p>
+    <%= f.label :scheme2 %><br/>
+    <%= f.text_field :scheme2, size: 40%>
+  </p>
+  <p>
+    <%= f.label :scheme3 %><br/>
+    <%= f.text_field :scheme3, size: 40%>
+  </p>
+  <p>
+    <%= f.label :scheme4 %><br/>
+    <%= f.text_field :scheme4, size: 40%>
+  </p>
+  <p>
+    <%= f.label :scheme5 %><br/>
+    <%= f.text_field :scheme5, size: 40%>
+  </p>
+  <p>
+    <%= f.submit 'Update Round Information' %>
+  </p>
+<% end %>

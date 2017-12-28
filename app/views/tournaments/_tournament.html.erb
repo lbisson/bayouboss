@@ -11,10 +11,14 @@
 
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title"><%= tournament.name %></h4>
+    <h4 class="card-title"><%= link_to tournament.name, tournament %></h4>
     <h6 class="card-subtitle mb-2 text-muted"><%= tournament.event_start %></h6>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Organizer: <%= tournament.user.name %></a>
+    <p class="card-link">Organizer: <%= tournament.user.name %></p>
+    <% if current_user?(tournament.user) %>
+      <%= link_to "delete", tournament, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
   </div>
 </div>
 

@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218210516) do
+ActiveRecord::Schema.define(version: 20171222215212) do
+
+  create_table "deployments", force: :cascade do |t|
+    t.string "deployment"
+    t.text "description"
+    t.string "suit"
+    t.integer "num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rounds", force: :cascade do |t|
+    t.string "strategy"
+    t.string "deployment"
+    t.string "scheme1"
+    t.string "scheme2"
+    t.string "scheme3"
+    t.string "scheme4"
+    t.string "scheme5"
+    t.integer "tournament_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tournament_id"], name: "index_rounds_on_tournament_id"
+  end
+
+  create_table "schemes", force: :cascade do |t|
+    t.string "scheme"
+    t.text "description"
+    t.string "suit"
+    t.integer "num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "strategies", force: :cascade do |t|
+    t.string "strategy"
+    t.text "description"
+    t.string "suit"
+    t.integer "num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tournaments", force: :cascade do |t|
     t.string "name"
@@ -19,6 +60,9 @@ ActiveRecord::Schema.define(version: 20171218210516) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "cost"
+    t.string "location"
+    t.text "summary"
     t.index ["user_id"], name: "index_tournaments_on_user_id"
   end
 

@@ -1,0 +1,15 @@
+<%= form_for(@tournament) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :event_start %>
+  <%= f.datetime_select :event_start, class: 'form-control' %>
+
+  <%= f.label :num_rounds %>
+  <%= f.number_field :num_rounds, class: 'form-control' %>
+
+
+
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,25 @@
+<header>
+    <h1><%= @tournament.name %></h1>
+</header>
+<h2><%= @tournament.event_start %> | <%= @tournament.location %> </h2>
+<%= link_to("Edit Tournament", edit_tournament_path) %> | <%= link_to("All Tournaments", tournaments_path) %>
+
+<p>
+  <%= @tournament.summary %>
+</p>
+<h3>Cost</h3>
+<p><%= @tournament.cost%></p>
+<h3>Number of Rounds  <%= link_to("Add Round",new_tournament_round_path(@tournament)) %></h3>
+<p><%= @tournament.num_rounds%></p>
+<h3>Organizer</h3>
+<p><%= @tournament.user.name %> </p>
+
+<div class="col-md-8">
+
+  <% if @tournament.rounds.any? %>
+    <h3>Rounds (<%= @tournament.rounds.count %>)</h3>
+    <ol class="rounds">
+      <%= render @rounds %>
+    </ol>
+  <% end %>
+</div>

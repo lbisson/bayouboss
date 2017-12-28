@@ -20,6 +20,12 @@ end
 
 users = User.order(:created_at).take(6)
 3.times do
-  name = Faker::App.name
-  users.each { |user| user.tournaments.create!(name: name, num_rounds: 3) }
+  users.each do |user|
+    name = Faker::App.name
+    user.tournaments.create!(name: name,
+                             num_rounds: 3,
+                             cost: 10.00,
+                             summary: Faker::Lorem.sentence(10),
+                             event_start: Time.now) 
+  end
 end
